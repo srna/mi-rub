@@ -13,6 +13,24 @@ describe "Odd iterator" do
     res.should include(6)
   end
 
+  it "should work different numbers" do
+    res = odd_elements([0,1,1,9,2,3])
+    res.should be_an_instance_of Array
+    res.should have(3).items
+    res[0].should == 1
+    res[1].should == 9
+    res[2].should == 3
+  end
+
+  it "should work for float" do
+    res = odd_elements([15,4.5,3.14,2.7181,2,0.123])
+    res.should be_an_instance_of Array
+    res.should have(3).items
+    res[0].should == 4.5
+    res[1].should == 2.7181
+    res[2].should == 0.123
+  end
+
   it "should yield" do
     res = odd_elements([1,2,3,4,5,6]) {|x| x**2 }
     res.should be_an_instance_of Array
