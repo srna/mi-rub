@@ -57,4 +57,11 @@ describe "Odd iterator" do
     ary.should == ary2
   end
   
+  it "should not modify original array when passing a block" do 
+    ary = [2,2,2,5,5,8]
+    ary2 = ary.dup
+    res = odd_elements(ary) {|x| x+1 }
+    ary.should == ary2
+  end
+  
 end
