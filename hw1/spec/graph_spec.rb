@@ -47,61 +47,54 @@ describe GraphSearch do
     run_search(file)
     compare_files($out_file, expected_output(file))
   end
-  
-  it "should search graph with 30 vertices" do
-    file = "g30.txt"
-    run_search(file)
-    compare_files($out_file, expected_output(file))
-  end
-  
-  it "should search graph with 50 vertices" do
-    file = "g50.txt"
-    run_search(file)
-    compare_files($out_file, expected_output(file))
-  end
+
   
   it "should pass benchmark" do
     puts "\n"
-    Benchmark.bm do |x|
+    Benchmark.bm do |x|      
+      file = "g30.txt"
+      x.report("30 nodes") do  
+        run_search(file)
+      end
+      compare_files($out_file, expected_output(file))
+      
+      
+      file = "g50.txt"
+      x.report("50 nodes") do  
+        run_search(file)
+      end
+      compare_files($out_file, expected_output(file))
+      
+      
       file = "g100.txt"
       x.report("100 nodes") do  
         run_search(file)
       end
-      x.report("validation") do  
-        compare_files($out_file, expected_output(file))
-      end
+      compare_files($out_file, expected_output(file))
       
       file = "g200bfs.txt"
       x.report("200 BFS") do  
         run_search(file)
       end
-      x.report("validation") do  
-        compare_files($out_file, expected_output(file))
-      end
+      compare_files($out_file, expected_output(file))
       
       file = "g200dfs.txt"
       x.report("200 DFS") do  
         run_search(file)
       end
-      x.report("validation") do  
-        compare_files($out_file, expected_output(file))
-      end
+      compare_files($out_file, expected_output(file))
       
       file = "g500.txt"
       x.report("500 nodes") do  
         run_search(file)
       end
-      x.report("validation") do  
-        compare_files($out_file, expected_output(file))
-      end
+      compare_files($out_file, expected_output(file))
       
       file = "g1000.txt"
       x.report("1000 nodes") do  
         run_search(file)
       end
-      x.report("validation") do  
-        compare_files($out_file, expected_output(file))
-      end
+      compare_files($out_file, expected_output(file))
       
     end
   end
