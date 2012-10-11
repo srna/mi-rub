@@ -18,7 +18,12 @@ describe VowelFinder do
   
   it "should perform a sum" do
     vf = VowelFinder.new("The quick brown fox jumps over the lazy dog")
-    vf.sum.should == "euioouoeeao"
+    vf.sum.should == "euioouoeeayo"
+  end
+  
+  it "shoud handle capital letters " do
+    vf = VowelFinder.new("A CRARY BIG BUY JUMPS OVER A HORIZONTALLY SIGNIFICANT LADY")
+    vf.sum.should == "aayiuyuoeaoioayiiiaay"
   end
   
   it "should include Summable module to Array class" do
