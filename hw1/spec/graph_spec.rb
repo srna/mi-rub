@@ -71,6 +71,22 @@ describe GraphSearch do
         compare_files($out_file, expected_output(file))
       end
       
+      file = "g200bfs.txt"
+      x.report("200 BFS") do  
+        run_search(file)
+      end
+      x.report("validation") do  
+        compare_files($out_file, expected_output(file))
+      end
+      
+      file = "g200dfs.txt"
+      x.report("200 DFS") do  
+        run_search(file)
+      end
+      x.report("validation") do  
+        compare_files($out_file, expected_output(file))
+      end
+      
       file = "g500.txt"
       x.report("500 nodes") do  
         run_search(file)
