@@ -13,7 +13,7 @@ describe GraphSearch do
     tested = File.open(out, 'r')
     File.open(expected, 'r') do |f|  
       f.each do|line|
-        line.should == tested.readline
+        tested.readline.should == line
       end
     end
   end
