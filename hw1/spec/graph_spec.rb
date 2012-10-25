@@ -19,7 +19,7 @@ describe GraphSearch do
   end
   
   def run_search(input_file)
-    $out_file = "#{File.dirname(__FILE__)}/out.test"
+    $out_file = "#{File.dirname(__FILE__)}/out.tmp"
     $stdout = File.new($out_file, 'w')
     
     input = File.open("#{File.dirname(__FILE__)}/input/#{input_file}", 'r')
@@ -108,5 +108,9 @@ describe GraphSearch do
       end
       compare_files($out_file, expected_output(file))
     end    
+  end
+  
+  it "should clean up" do
+    File.delete($out_file) if File.exists?($out_file)
   end
 end
