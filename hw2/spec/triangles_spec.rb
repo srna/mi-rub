@@ -62,7 +62,10 @@ describe 'TrianglesSolver' do
 		  compare(line, got, num, item)
 	      end
 	    end
-	  stderr.eof.should be true
+	  unless stderr.eof?
+	    puts stderr.readlines
+	    raise 'strderr should be empty'
+	  end
 	end
 	i +=1
       end
