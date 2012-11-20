@@ -16,18 +16,31 @@ describe Roman do
     Roman.new(10).to_s.should == 'x'
   end
   
+  it "should act as an integer" do
+    r = Roman.new(1)
+    r.respond_to?(:to_int)
+    # we should also get method +:to_i+ which comes with +:to_int+
+    r.respond_to?(:to_i)
+    # default conversion
+    r.should == 1
+  end
+  
   it "should support adding" do
-    (Roman.new(2) + Roman.new(3)).should == 5
+    res = Roman.new(2) + Roman.new(3)
+    res.should == 5
+    (res.kind_of? Roman).should be true
   end
   
   it "should have defined coerce methods" do
-     (2 + Roman.new(3)).should == 5
-     (Roman.new(3) + 3).should == 6
+    (2 + Roman.new(3)).should == 5
+    (Roman.new(3) + 3).should == 6
   end
   
   it "should support multiplying" do
     (Roman.new(3) * Roman.new(3)).should == 9
-    (2 * Roman.new(3)).should == 6
+    res = 2 * Roman.new(3)
+    res.should == 6
+    (res.kind_of? Roman).should be true
     (Roman.new(3) * 4).should == 12
   end
   
@@ -56,13 +69,23 @@ describe Roman do
   
   it "should be comparable to float" do
     Roman.new(1).should == 1.0
-    #Roman.new(1).should_not == 1.1
+    Roman.new(1).should_not == 1.2
   end
   
   it "should support substraction" do
     (Roman.new(5) - Roman.new(3)).should == 2
     (Roman.new(4) - Roman.new(1)).should == 3
     (Roman.new(4) - 2).should == 2
-    (6 - Roman.new(1)).should == 5
+    res = 6 - Roman.new(1)
+    res.should == 5
+    (res.kind_of? Roman).should be true
+  end
+  
+  it "should support dividing" do
+    res = Roman.new(12) / Roman.new(4)
+    res.should == 3
+    (res.kind_of? Roman).should be true
+    (Roman.new(50) / 10).should == 5
+    (16 / Roman.new(4)).should == 4
   end
 end
