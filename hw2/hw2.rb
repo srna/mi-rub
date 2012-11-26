@@ -2,7 +2,11 @@
 require_relative 'triangles'
 
 # @TODO implement solution 
-# 
+#   
+
+$D = false
+
+#p Triangles.detect_intersection [[1,3],[4,0]], [[0,0],[3,3]]
 
 if ARGV.length == 0 
   Triangles.new(STDIN)
