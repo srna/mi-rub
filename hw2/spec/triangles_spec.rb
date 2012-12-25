@@ -40,7 +40,7 @@ describe 'TrianglesSolver' do
   
   def compare(line, got, num, item)
     if(line != got) then
-      puts "\nTest #{num}, item: #{item}:\n Expected: #{line}\n but got: #{got}"
+      puts "\nTest #{num+1}, item: #{item}:\n Expected: #{line}\n but got: #{got}"
       @points[num] -=1 if @points[num] > 0
     else
       @score[num] += 1
@@ -62,7 +62,10 @@ describe 'TrianglesSolver' do
 		  compare(line, got, num, item)
 	      end
 	    end
-	  stderr.eof.should be true
+	  unless stderr.eof?
+	    puts stderr.readlines
+	    raise 'strderr should be empty'
+	  end
 	end
 	i +=1
       end
@@ -83,7 +86,7 @@ describe 'TrianglesSolver' do
     for i in 0..2 do
       res =  @score[i]* @points[i] / 100
       sum += res
-      puts "\tTestovaci sada 1: %d%%, bodu: %d" % [@score[i], res]
+      puts "\tTestovaci sada #{i+1}: %d%%, bodu: %d" % [@score[i], res]
     end
     print "\n\t*************************************\n"
     print   "\t* Celkovy pocet ziskanych bodu: %d  *\n" % sum
