@@ -1,0 +1,25 @@
+
+**********************************************************
+* Testovaci Makefile pro spusteni testu domaciho ukolu 3 *
+**********************************************************
+
+Test lze spustit na platformach - Solaris, Linux 32bit,
+Linux 64bit a MacOS.
+
+Pro solaris zadejte do prikazove radky:
+
+make test_solaris
+
+Pro linux 32bit:
+
+make test_linux_32
+
+Pro linux 64bit:
+
+make test_linux_64
+
+Pro MacOS:
+
+make test_macos
+
+
