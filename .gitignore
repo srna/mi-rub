@@ -17,3 +17,8 @@ tmp
 .yardoc
 _yardoc
 doc/
+
+# srnatoma
+.DS_Store
+hw3/outputs/
+hw3/inputs/test2
