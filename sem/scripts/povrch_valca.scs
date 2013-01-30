@@ -1,0 +1,14 @@
+echo "Program pre vypocet povrchu valca."
+
+echo "Zadaj polomer podstavy valca:"
+read r
+
+echo "Zadaj vysku valca:"
+read v
+
+eval P = 2*pi*r*(r+v)
+
+echo "Povrch valca je: " + P
+
+echo "Program ukoncite stlacenim klavesy ENTER"
+pause

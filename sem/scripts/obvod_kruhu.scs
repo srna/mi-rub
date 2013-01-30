@@ -1,0 +1,11 @@
+echo "Program pre vypocet obvodu kruhu."
+
+echo "Zadaj polomer kruhu:"
+read r 
+
+eval O = 2*pi*r
+
+echo "Obvod kruhu je: " + O
+
+echo "Program ukoncite stlacenim klavesy ENTER"
+pause

@@ -1,0 +1,11 @@
+echo "Program pre vypocet obsahu stvorca."
+
+echo "Zadaj velkost strany stvorca:"
+read a
+
+eval S = a^2
+
+echo "Obsah stvorca je: " + S
+
+echo "Program ukoncite stlacenim klavesy ENTER"
+pause

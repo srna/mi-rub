@@ -1,0 +1,11 @@
+echo "Program pre vypocet objemu kocky."
+
+echo "Zadaj stranu kocky:"
+read a
+
+eval V = a^3
+
+echo "Objem kocky je: " + V
+
+echo "Program ukoncite stlacenim klavesy ENTER"
+pause

@@ -1,0 +1,11 @@
+echo "Program pre vypocet obvodu kosostvorca."
+
+echo "Zadaj velkost strany kosostvroca:"
+read a
+
+eval O = 4*a
+
+echo "Obvod kosostvorca je: " + O
+
+echo "Program ukoncite stlacenim klavesy ENTER"
+pause

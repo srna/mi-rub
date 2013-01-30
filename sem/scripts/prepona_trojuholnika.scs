@@ -1,0 +1,14 @@
+echo "Program pre vypocet prepony trojuholnika."
+
+echo "Zadaj odvesnu 1:"
+read odvesna1
+
+echo "Zadaj odvesnu 2:"
+read odvesna2
+
+eval prepona = sqrt(odvesna1^2+odvesna2^2)
+
+echo "Prepona je: " + prepona
+
+echo "Program ukoncite stlacenim klavesy ENTER"
+pause

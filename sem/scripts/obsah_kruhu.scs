@@ -1,0 +1,11 @@
+echo "Program pre vypocet obsahu kruhu."
+
+echo "Zadaj polomer kruhu:"
+read r
+
+eval S = pi*r^2
+
+echo "Obsah kruhu je:" + S
+
+echo "Program ukoncite stlacenim klavesy ENTER"
+pause

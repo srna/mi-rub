@@ -1,0 +1,14 @@
+echo "Program pre vypocet obsahu trojuholnika."
+
+echo "Zadaj velkost strany trojuholnika:"
+read a
+
+echo "Zadaj vysku na zadanu stranu:"
+read v
+
+eval S = (a*v)/2
+
+echo "Obsah trojuholnika je: " + S
+
+echo "Program ukoncite stlacenim klavesy ENTER"
+pause

@@ -1,0 +1,7 @@
+echo "Program pre vypocet objemu gule."
+echo "Zadaj polomer gule:"
+read r
+eval V = (3/4)*pi*r^3
+echo "Objem gule je: " + V
+echo "Program ukoncite stlacenim klavesy ENTER"
+pause

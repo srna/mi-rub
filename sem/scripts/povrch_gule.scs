@@ -1,0 +1,12 @@
+echo "Program pre vypocet povrchu gule."
+
+
+echo "Zadaj polomer gule:"
+read r
+
+eval P = 4*pi*r^2
+
+echo "Povrch gule je: " + P
+
+echo "Program ukoncite stlacenim klavesy ENTER"
+pause

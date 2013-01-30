@@ -1,0 +1,17 @@
+echo "Program pre vypocet obsahu lichobeznika."
+
+echo "Zadaj velkost podstavca lichobeznika:"
+read a
+
+echo "Zadaj velkost vrchnej strany lichobeznika:"
+read c
+
+echo "Zadaj vysku lichobeznika:"
+read v
+
+eval S = ((a+c)*v)/2
+
+echo "Obsah lichobeznika je: " + S
+
+echo "Program ukoncite stlacenim klavesy ENTER"
+pause
